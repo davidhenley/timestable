@@ -22,22 +22,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="r7e-A3-O76">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.050000000000000003" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="r7e-A3-O76">
                                 <rect key="frame" x="14" y="20" width="347" height="31"/>
                                 <connections>
                                     <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="s5M-aj-UOw"/>
                                 </connections>
                             </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GUu-fl-lkB">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="SHm-fh-S98">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SHm-fh-S98" id="bLF-zA-QTz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ldX-Oz-bxI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="htl-Py-ycA"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GUu-fl-lkB" secondAttribute="trailing" id="EIl-Ey-sAM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GUu-fl-lkB" secondAttribute="bottom" id="U4q-nP-jPY"/>
                             <constraint firstItem="r7e-A3-O76" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VQV-Us-P84"/>
                             <constraint firstItem="r7e-A3-O76" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ivY-r1-7D7"/>
+                            <constraint firstItem="GUu-fl-lkB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ptN-bD-jEd"/>
                             <constraint firstItem="r7e-A3-O76" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="swt-Gt-lOs"/>
+                            <constraint firstItem="GUu-fl-lkB" firstAttribute="top" secondItem="r7e-A3-O76" secondAttribute="bottom" constant="8" id="vPJ-i3-M05"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="slider" destination="r7e-A3-O76" id="PBH-li-89M"/>
+                        <outlet property="table" destination="GUu-fl-lkB" id="sQF-pT-4a2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
